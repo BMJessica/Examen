@@ -4,6 +4,7 @@ import { AboutComponent } from './pages/about/about.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { ProductsComponent } from './pages/products/products.component';
 import { CarritoComponent } from './carrito/carrito.component';
+import { FormularioComponent } from './formulario/formulario.component';
 
 export const routes: Routes = [
     {path: '', component:HomeComponent },
@@ -11,5 +12,6 @@ export const routes: Routes = [
     {path: 'productos', component:ProductsComponent},
     {path: 'contacto', component:ContactComponent},
     { path: 'carrito', component: CarritoComponent },
+    { path: 'formulario', component: FormularioComponent },
     {path: '**', redirectTo: ''}
 ];

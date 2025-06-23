@@ -1,0 +1,12 @@
+
+<div class="modal-overlay" *ngIf="showModal">
+  <div class="modal">
+    <button class="close" (click)="closeModal()">X</button>
+    <h2>{{ product?.nombre }}</h2>
+    <img [src]="product?.imagen" [alt]="product?.nombre">
+    <p><strong>Descripción:</strong> {{ product?.descripcionLarga }}</p>
+    <p><strong>Origen:</strong> {{ product?.origen }}</p>
+    <p><strong>Cuidados:</strong> {{ product?.cuidados }}</p>
+    <button (click)="closeModal()">Cerrar</button>
+  </div>
+</div>

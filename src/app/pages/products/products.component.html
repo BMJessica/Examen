@@ -1,0 +1,30 @@
+<h1>Nuestros productos</h1> 
+<img src="/img/nose.jpg" alt="Flor">
+
+<section class="productos">
+  @for(producto of productos; track producto.id){
+    <article class="producto">
+      <img [src]="producto.imagen" [alt]="producto.nombre">
+      <h3>{{producto.nombre}}</h3>
+      <p>{{producto.descripcion}}</p>
+      <strong>${{producto.precio}}</strong>
+      <br>
+      <button (click)="verMas(producto)">Ver más</button>
+      <button (click)="agregarAlCarrito(producto)">🛒 Comprar</button>
+    </article>
+  }
+</section>
+
+<!-- Modal -->
+<div class="modal-overlay" *ngIf="mostrarModal">
+  <div class="modal">
+    <button class="close" (click)="cerrarModal()">X</button>
+    <h2>{{ productoSeleccionado?.nombre }}</h2>
+    <img [src]="productoSeleccionado?.imagen" [alt]="productoSeleccionado?.nombre">
+    <p><strong>Descripción:</strong> {{ productoSeleccionado?.descripcionLarga }}</p>
+    <p>{{ productoSeleccionado?.descripcion }}</p>
+    <p><strong>Precio:</strong> ${{ productoSeleccionado?.precio }}</p>
+    <p><strong>Origen:</strong> {{ productoSeleccionado?.origen }}</p>
+    <p><strong>Cuidados:</strong> {{ productoSeleccionado?.cuidados }}</p>
+  </div>
+</div>
